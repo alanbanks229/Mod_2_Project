@@ -13,13 +13,28 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.save
-    redirect_to user_path(@user)
+    if @user.valid?
+      @user.save
+      redirect_to user_path(@heroine)
+    else
+      render :new  
+    end
+  end
+  
+  def edit
+    @user = User.find(params[:id])
   end
 
+  #make sure to implement unique username, email, full_name validations
+  def update
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path(@user)
+  end
 
   private
   def user_params
     params.require(:user).permit(:full_name, :email, :username)
   end
+
 end

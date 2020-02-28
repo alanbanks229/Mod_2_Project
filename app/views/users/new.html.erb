@@ -1,11 +1,25 @@
-<h1>User Form</h1>
-<%= form_for @users do |f| %>
+<h1>New User Form</h1>
+<% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+    <% end %>
+<% end %>
+
+<br>
+
+<%= form_for @user do |f| %>
 	<%= f.label :full_name%>
 	<%= f.text_field :full_name%>
+	<br>
 	<%= f.label :username%>
 	<%= f.text_field :username%>
+	<br>
 	<%= f.label :email%>
 	<%= f.text_field :email%>
+	<br>
 	<%= f.submit %>
-	<% end %>
-
+	<br>
+<% end %>
+<br>
+<br>
+<%= link_to "Cancel", users_path %>
