@@ -3,8 +3,10 @@
 <h3>Email: <%= @user.email %></h3>
 <ul>
 <% @user.posts.each do |p| %>
-	<li><%= p.content %></li>
+	<li><%= link_to p.content, comments_path(p) %></li>
 <% end %>
 </ul>
+
+<%= link_to "Back to Users Page", users_path %>
 
 
