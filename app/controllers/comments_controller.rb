@@ -1,16 +1,12 @@
 class CommentsController < ApplicationController
-  def index
-    @comments = Comment.all
-  end
-
-  def show
-    @comments = Comment.find(params[:id])
-  end
 
   def new
     @comment = Comment.new
   end
 
+  def show
+    @comment = Comment.find(params[:id])
+  end
   def create
     @comment = Comment.new(comment_params)
     @comment.save
@@ -18,6 +14,12 @@ class CommentsController < ApplicationController
   end
 
   def edit
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to users_path
   end
 
   private

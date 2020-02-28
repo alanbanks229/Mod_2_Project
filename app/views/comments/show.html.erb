@@ -1,2 +1,4 @@
-<h1>Comments#show</h1>
-<p>Find me in app/views/comments/show.html.erb</p>
+<h1><%= @comment.user.username %> comment </h1>
+<p> <%=@comment.content %>
+<br>
+<%= button_to "delete", @comment, :method => "delete" %>

@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :replies, only: [:index]
   resources :categories, only: [:index]
   resources :posts, only: [:index, :new, :create, :show]
-  resources :comments, only: [:index]
+  resources :comments, only: [:new, :show, :create, :edit, :update, :destroy]
 end
