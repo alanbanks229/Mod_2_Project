@@ -1,2 +1,18 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
+<h1><%=@category.name%></h1>
+<h3><%=@category.description%></h3>
+<br>
+<%= link_to "New Post", new_post_path %>
+<br>
+<br>
+<h3>Posts</h3>
+<br>
+<% @category.posts.each do |post| %>
+    <li>Posted by: <%= post.user.username %>
+    <br>
+    <em><%= link_to post.title, post_path(post) %></em>
+    </li>
+    <br>
+<% end %>
+<br>
+<br>
+<%= link_to "Categories Homepage", categories_path %>
