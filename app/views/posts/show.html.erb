@@ -13,6 +13,16 @@
     <li><%=comment.user.username %>: <%= link_to "Reply", new_comment_path(:comment => {:parent_id => comment.id, :post => @post.id}) %>
     <br>
     <%=comment.content%></li>
+    <% if comment.replies %>
+        <ul>
+        <% comment.replies.each do |reply| %>
+            <li>---<%=reply.user.username%>:
+            <br>
+            <%=reply.content%></li>
+            <br>
+        <% end %>
+        </ul>
+    <% end %>
     <br>
 <% end %>
 <br>
