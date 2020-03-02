@@ -23,6 +23,8 @@ class PostsController < ApplicationController
 
     if @post.valid?
        @post.save
+       #saw this flash thing on youtube delete if it doesn't work
+       flash[:notice] = "Post Successfully Created!"
        redirect_to post_path(@post)
     else
       render :new
