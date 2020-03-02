@@ -10,6 +10,14 @@
   </head>
 
   <body>
+    <div class="header">
+      <% if session[:user_id] %>
+        <h4>Logged in as: <%= current_user.username %></h4>
+        <span><%= link_to "Logout", logout_path %></span>
+      <% else %>
+        <%= link_to "Login", login_path %>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>

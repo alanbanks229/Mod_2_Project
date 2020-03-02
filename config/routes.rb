@@ -6,4 +6,10 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show, :new, :create]
   resources :posts, only: [:index, :new, :create, :show] #No need for index for posts
   resources :comments, only: [:new, :show, :create, :edit, :update, :destroy]
+
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#logout'
+
 end
