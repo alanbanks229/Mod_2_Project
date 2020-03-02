@@ -8,6 +8,7 @@ class PostsController < ApplicationController
   end
 
   def new
+    current_user
     @post = Post.new
   end
 
@@ -16,11 +17,13 @@ class PostsController < ApplicationController
   # Can't find way to change post params :category, :user keys with '_id' after without
   # it breaking... ask Monday.
   def create
-    @post = Post.new(category_id: params[:post][:category],
-                     user_id: params[:post][:user],
-                     content: params[:post][:content],
-                     title: params[:post][:title])
-
+    # @post = Post.new(category_id: params[:post][:category],
+    #                  user_id: params[:post][:user],
+    #                  content: params[:post][:content],
+    #                  title: params[:post][:title])
+    @post = Post.new(post_params)
+    byebug
+    @post.user = current_user
     if @post.valid?
        @post.save
        redirect_to post_path(@post)
@@ -31,6 +34,6 @@ class PostsController < ApplicationController
 
   #not using this for now... save this tho.
   def post_params
-    params.require(:post).permit(:category, :user, :content, :title)
+    params.require(:post).permit(:category_id, :user_id, :content, :title)
   end
 end
