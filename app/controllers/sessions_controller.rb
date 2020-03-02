@@ -12,6 +12,7 @@ class SessionsController < ApplicationController
         flash[:notice] = "No user found with those credentials"
         render :new
     end
+
   end
 
   def logout
