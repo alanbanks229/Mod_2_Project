@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#logout'
+  get '/about' => 'sessions#about' #This will be the homepage/about page... will display options to log in or signup
 
 end
