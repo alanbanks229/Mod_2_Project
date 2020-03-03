@@ -23,6 +23,13 @@
  .wrap_it_up {
      text-align: center;
  }
+ .logo {
+     position: absolute;
+     top: 5%;
+     left: 3%;
+     font-size: 70px;
+     font-family: 'Dancing Script', cursive;
+ }
 
  .new_font {
     font-family: 'Dancing Script', cursive;
