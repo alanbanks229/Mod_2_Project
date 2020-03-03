@@ -7,6 +7,7 @@ the usage of the if else conditionals checking if a user is logged in-->
 <% end %>
 <h3>Email: <%= @user.email %></h3>
 <br>
+<%= link_to "Create a New Post", new_post_path %>
 <br>
 <%if session[:user_id] %>
 	<h1>Your Post(s)</h1>
