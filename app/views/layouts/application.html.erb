@@ -33,7 +33,10 @@
         </div>
         <br>
       <% else %>
-        <h4><%= link_to "Create an account", new_user_path %> or <%= link_to "Login", login_path %> to get more functionality in this application</h4>
+      <div> <!-- Maybe make this kinda like a pop-up thing if user is not logged in make this go to bottom? -->
+        <h4>To get the most out of Askit:<br><%= link_to "Create an account", new_user_path %> or <%= link_to "Login", login_path %></h4>
+      </div>
+      <br>
       <% end %>
     </div>
     <%= yield %>
