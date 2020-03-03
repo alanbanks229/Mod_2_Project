@@ -1,15 +1,23 @@
-<h1><%=@user.username%> Homepage</h1>
-
+<!-- There is probably a better way to do the below, in regards to 
+the usage of the if else conditionals checking if a user is logged in-->
+<%if session[:user_id] %>
+	<h1>Your Homepage</h1>
+<%else %>
+	<h1><%=@user.username%> Homepage</h1>
+<% end %>
 <h3>Email: <%= @user.email %></h3>
 <br>
 <br>
-<h3><%=@user.username%> Post(s)</h3>
+<%if session[:user_id] %>
+	<h1>Your Post(s)</h1>
+<%else %>
+	<h3><%=@user.username%> Post(s)</h3>
+<% end %>
 <ul>
 <% @user.posts.each do |p| %>
-	<li>Category: <%= p.category.name %>
+	<li>Category: <%= link_to p.category.name, category_path(p.category) %>
 		<br>
-		<br>
-		<%= link_to p.title, post_path(p) %>
+		<p>Title: <%= link_to p.title, post_path(p) %></p>
 	</li>
 <% end %>
 </ul>
