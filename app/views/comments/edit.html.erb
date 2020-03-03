@@ -2,15 +2,7 @@
 
 <%=form_for @comment do |p| %>
 	<br>
-    <%= hidden_field(:comment, :parent_id, :value => @parent_id) %>
-    <%= hidden_field(:comment, :post_id, :value => @post) %>
-    <%= hidden_field(:comment, :user_id, :value => current_user.id) %>
-	<!---For some reason having the above prevents editing comment and update. -->
-
-	
-
-	<br>
-	<b><%= p.label :content %></b>
+	<%= p.label :content %></b>
 	<%= p.text_field :content%>
 	<br>
 	<%= p.submit %>
