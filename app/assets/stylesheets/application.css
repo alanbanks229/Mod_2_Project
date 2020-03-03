@@ -13,3 +13,13 @@
  *= require_tree .
  *= require_self
  */
+
+ .biggerButton {
+
+     height: 50px;
+     width: 100px;
+ }
+
+ .wrap_it_up {
+     text-align: center;
+ }
