@@ -17,13 +17,19 @@
             <%= link_to "Edit", edit_comment_path(comment) %>
         <% end %>
         <br>
-        <%=comment.content%></li>
+        <%=comment.content%>
+        
+        </li>
         <% if comment.replies %>
             <ul>
             <% comment.replies.each do |reply| %>
                 <li>---<%=reply.user.username%>:
                 <br>
-                <%=reply.content%></li>
+                <%=reply.content%>
+                <% if session[:user_id] == reply.user_id %>
+            <%= link_to "Edit", edit_comment_path(reply) %>
+        <% end %>
+                </li>
                 <br>
             <% end %>
             </ul>
