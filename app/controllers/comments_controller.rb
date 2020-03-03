@@ -8,7 +8,6 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
     @post = params[:post]
-    
     if params[:parent_id]
       @parent_id = params[:parent_id]
     end
@@ -26,12 +25,18 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+    @post = params[:post]
+    byebug
+    if params[:parent_id]
+      @parent_id = params[:parent_id]
+    end
   end
 
   def update
     comment = Comment.find(params[:id])
+    #byebug
     comment.update(comment_params)
-    redirect_to posts_path
+    redirect_to post_path(comment.post)
   end
 
   def destroy
