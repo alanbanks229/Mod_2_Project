@@ -7,10 +7,10 @@ class CommentsController < ApplicationController
 
   def new
     @comment = Comment.new
-    @post = params[:comment][:post]
+    @post = params[:post]
     
-    if params[:comment][:parent_id]
-      @parent_id = params[:comment][:parent_id]
+    if params[:parent_id]
+      @parent_id = params[:parent_id]
     end
   end 
 

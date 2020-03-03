@@ -14,6 +14,7 @@
       <% if session[:user_id] %>
         <h4>Logged in as: <%= current_user.username %></h4>
         <span><%= link_to "Logout", logout_path %></span>
+        <span><%= link_to "#{current_user.username} profile", user_path(current_user) %>
       <% else %>
         <%= link_to "Login", login_path %>
       <% end %>

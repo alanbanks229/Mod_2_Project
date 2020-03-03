@@ -5,12 +5,12 @@
 <h3>Posted By: <%= @post.user.username %></h3>
 <br>
 <p><%=@post.content%></p>
-<p><%= link_to "Respond to Post", new_comment_path(:post => @post.id) %>
+<p><%= link_to "Respond to Post", new_comment_path(post: @post.id) %>
 
 
 <h4>Comments</h4>
 <% @post.comments.each do |comment| %>
-    <li><%=comment.user.username %>: <%= link_to "Reply", new_comment_path(:comment => {:parent_id => comment.id, :post => @post.id}) %>
+    <li><%=comment.user.username %>: <%= link_to "Reply", new_comment_path(parent_id: comment.id, post: @post.id) %>
     <br>
     <%=comment.content%></li>
     <% if comment.replies %>
