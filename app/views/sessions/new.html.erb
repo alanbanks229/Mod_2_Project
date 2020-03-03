@@ -1,8 +1,22 @@
 
 <h1>Login</h1>
+
+<!--<%= flash[:notice] %> Works too-->
+
+<% flash.each do |type, msg| %>
+  <div>
+    <p class="red"><%= msg %><p>
+  </div>
+<% end %>
+<br>
+<br>
 <%= form_tag login_path do %>
   <%= label_tag :username %>
   <%= text_field_tag :username %>
+  <br>
+  <%= label_tag :password %>
+  <%= password_field_tag :password %>
+  <br>
   <%= submit_tag "Login" %>
 <% end %>
 <br>

@@ -14,6 +14,9 @@
     <div class="header wrap_it_up">
       <% if session[:user_id] %>
         <h4>Logged in as: <%= current_user.username %></h4>
+        <% if current_user.admin == true %>
+          <h5 class="red"><b>ADMIN</b></h5>
+        <% end %>
         <div class="ui animated fade button biggerButton" tabindex="0">
           <div class="visible content">Profile</div>
             <div class="hidden content">

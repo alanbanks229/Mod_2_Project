@@ -24,6 +24,11 @@ class ApplicationController < ActionController::Base
         !!current_user #one bang converts into boolean...
     end
 
+    def admin
+        flash[:alert] = "Only Admins have that capability!"
+        redirect_to login_path unless current_user.admin
+    end
+
     def authorized
         flash[:login_warning] = "You must be logged in to use that function"
         redirect_to login_path unless logged_in?

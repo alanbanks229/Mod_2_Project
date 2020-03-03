@@ -11,10 +11,11 @@ Comment.destroy_all
 
 #user.create
 #   User.create     (full_name: , user_name: , email: )
-alan = User.create(full_name: "Alan Banks", username: "abanks229", email: "banksgamerz229@gmail.com")
-vsauce = User.create(full_name: "Michael", username: "VSauce", email: "vsauce@gmail.com")
-magician = User.create(full_name: "Confused Musician", username: "Bob Doe", email: "help_me_wit_music@gmail.com")
-wesley = User.create(full_name: "Wesley Chen", username: "JuicyBlocBoi", email: "DaChen@gmail.com")
+alan = User.create(full_name: "Alan Banks", username: "abanks229", email: "banksgamerz229@gmail.com", password: "posh", admin: true)
+vsauce = User.create(full_name: "Michael", username: "VSauce", email: "vsauce@gmail.com", password: "posh", admin: false)
+magician = User.create(full_name: "Confused Musician", username: "Bob Doe", email: "help_me_wit_music@gmail.com", password: "posh", admin: false)
+wesley = User.create(full_name: "Wesley Chen", username: "JuicyBlocBoi", email: "DaChen@gmail.com", password: "posh", admin: false)
+jason = User.create(full_name: "Jason Park", username: "JasonP", email: "jasonp@gmail.com", password: "posh", admin: true)
 
 #   Category.create (name: , description: )
 category1 = Category.create(name: "Programming/Coding", description: "A category dedicated to questions regarding coding languages.")

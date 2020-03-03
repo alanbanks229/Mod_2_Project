@@ -3,7 +3,9 @@
 <h2><%=@post.title%></h2>
 
 <h3>Posted By: <%= @post.user.username %></h3>
-<%= link_to "Edit this Post", edit_post_path(@post)%>
+    <% if session[:user_id] == @post.user_id %>
+        <%= link_to "Edit", edit_post_path(@post) %>
+    <% end %>
 <br>
 <p><%=@post.content%></p>
 <p><%= link_to "Respond to Post", new_comment_path(post: @post.id) %>
