@@ -10,20 +10,22 @@
 
 <h4>Comments</h4>
 <% @post.comments.each do |comment| %>
-    <li><%=comment.user.username %>: <%= link_to "Reply", new_comment_path(parent_id: comment.id, post: @post.id) %>
-    <br>
-    <%=comment.content%></li>
-    <% if comment.replies %>
-        <ul>
-        <% comment.replies.each do |reply| %>
-            <li>---<%=reply.user.username%>:
-            <br>
-            <%=reply.content%></li>
-            <br>
+    <% if comment.parent_id == nil %> <!-- If this comment is parent... prevents replies displaying themselves as parent comment -->
+        <li><%=comment.user.username %>: <%= link_to "Reply", new_comment_path(parent_id: comment.id, post: @post.id) %>
+        <br>
+        <%=comment.content%></li>
+        <% if comment.replies %>
+            <ul>
+            <% comment.replies.each do |reply| %>
+                <li>---<%=reply.user.username%>:
+                <br>
+                <%=reply.content%></li>
+                <br>
+            <% end %>
+            </ul>
         <% end %>
-        </ul>
+        <br>
     <% end %>
-    <br>
 <% end %>
 <br>
 <br>
