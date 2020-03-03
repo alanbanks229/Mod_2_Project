@@ -11,6 +11,11 @@ class PostsController < ApplicationController
   def new
     current_user
     @post = Post.new
+
+    if params[:category_id]
+      @category_id = params[:category_id]
+      @category_name = params[:category_name]
+    end
   end
 
   # params we are getting  {"category" => int, "user" => int, ... } 

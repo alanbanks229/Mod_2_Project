@@ -1,7 +1,7 @@
 <h1><%=@category.name%></h1>
 <h3><%=@category.description%></h3>
 <br>
-<%= link_to "New Post", new_post_path %>
+<p><%= link_to "New Post", new_post_path(category_name: @category.name, category_id: @category.id) %></p>
 <br>
 <br>
 <h3>Posts</h3>

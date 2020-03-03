@@ -1,4 +1,8 @@
-<h1>Create A New Post</h1>
+<%if @category_id && @category_name %> <!-- If user clicked New Post from a specific Category Page -->
+	<h1>New Post For <%= @category_name%></h1>
+<% else %>
+	<h1>Create A New Post</h1>
+<% end %>
 
 <% if @post.errors.any? %>
     <% @post.errors.full_messages.each do |msg| %>
@@ -12,8 +16,12 @@
 	<%= p.collection_select :user_id, User.all, :id, :username, prompt: true %>
 	<br>
 	-->
-	<b><%= p.label :categories %></b>
-	<%= p.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+	<%if @category_id && @category_name %> <!-- If user clicked New Post from a specific Category Page -->
+		<%= hidden_field(:post, :category_id, :value => @category_id) %>
+	<% else %> <!-- When User selects New Post on their profile page -->
+		<b><%= p.label :categories %></b>
+		<%= p.collection_select :category_id, Category.all, :id, :name, prompt: true %>
+	<% end %>
 	<br>
 	<br>
 	<b><%= p.label :title %></b>
