@@ -32,13 +32,9 @@
         </div>
         <br>
       <% else %>
-        <%= link_to "Login", login_path %>
+        <h4><%= link_to "Create an account", new_user_path %> or <%= link_to "Login", login_path %> to get more functionality in this application</h4>
       <% end %>
     </div>
-
-    <% if flash[:login_warning] %>
-      <div class="notice"><%= flash[:login_warning] %></div>
-    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -14,9 +14,13 @@
 <h4>Comments</h4>
 <% @post.comments.each do |comment| %>
     <% if comment.parent_id == nil %> <!-- If this comment is parent... prevents replies displaying themselves as parent comment -->
-        <li><%=comment.user.username %>: <%= link_to "Reply", new_comment_path(parent_id: comment.id, post: @post.id)%>
+        <li><%=comment.user.username %>: <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
+            <i class="reply icon">Reply</i>
+        <% end %>
         <% if session[:user_id] == comment.user_id %>
-            <%= link_to "Edit", edit_comment_path(comment) %>
+            <%= link_to edit_comment_path(comment) do %>
+                <i class="edit icon">Edit</i>
+            <% end %>
         <% end %>
         <br>
         <%=comment.content%>
@@ -29,8 +33,10 @@
                 <br>
                 <%=reply.content%>
                 <% if session[:user_id] == reply.user_id %>
-            <%= link_to "Edit", edit_comment_path(reply) %>
-        <% end %>
+                <%= link_to edit_comment_path(reply) do %>
+                    <i class="edit icon">Edit</i>
+                    <% end %>
+                 <% end %>
                 </li>
                 <br>
             <% end %>
