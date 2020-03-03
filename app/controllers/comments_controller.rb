@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 
+  before_action :authorized, only: [:new, :create, :edit, :update]
 
   def show
     @comment = Comment.find(params[:id])

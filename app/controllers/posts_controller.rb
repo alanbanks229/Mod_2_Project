@@ -1,4 +1,7 @@
 class PostsController < ApplicationController
+  
+  before_action :authorized, only: [:new, :create, :edit, :update]
+
   def index
     @posts = Post.all
   end
@@ -16,6 +19,8 @@ class PostsController < ApplicationController
       @category_id = params[:category_id]
       @category_name = params[:category_name]
     end
+
+
   end
 
   # params we are getting  {"category" => int, "user" => int, ... } 

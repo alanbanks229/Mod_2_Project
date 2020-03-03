@@ -15,16 +15,27 @@
       <% if session[:user_id] %>
         <h4>Logged in as: <%= current_user.username %></h4>
         <div class="ui animated fade button biggerButton" tabindex="0">
-        <div class="visible content">Profile</div>
-        <div class="hidden content">
-        <span><%= link_to "Your Page", user_path(current_user) %>
-        </div>
+          <div class="visible content">Profile</div>
+            <div class="hidden content">
+              <span><%= link_to "Your Page", user_path(current_user) %>
+            </div>
+          </div>
+        <div class="ui animated fade button biggerButton" tabindex="0">
+          <div class="visible content">Logout :)</div>
+            <div class="hidden content">
+              <span><%= link_to "Logout", "/logout" %>
+            </div>
+          </div>
         </div>
         <br>
       <% else %>
         <%= link_to "Login", login_path %>
       <% end %>
     </div>
+
+    <% if flash[:login_warning] %>
+      <div class="notice"><%= flash[:login_warning] %></div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  
+  before_action :authorized, only: [:new, :create, :edit, :update]
+
   def index
     @categories = Category.all
   end
