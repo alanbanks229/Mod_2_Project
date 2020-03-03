@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :replies, only: [:index, :new, :create] #At the end we don't need index for replies
   resources :categories, only: [:index, :show, :new, :create]
-  resources :posts, only: [:index, :new, :create, :show] #No need for index for posts
+  resources :posts, only: [:index, :new, :create, :show, :edit, :update] #No need for index for posts
   resources :comments, only: [:new, :show, :create, :edit, :update, :destroy]
 
 

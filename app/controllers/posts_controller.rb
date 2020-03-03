@@ -23,7 +23,6 @@ class PostsController < ApplicationController
     #                  content: params[:post][:content],
     #                  title: params[:post][:title])
     @post = Post.new(post_params)
-    byebug
     @post.user = current_user
     if @post.valid?
        @post.save
@@ -31,6 +30,16 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    @post.update(post_params)
+    redirect_to post_path(@post)
   end
 
   #not using this for now... save this tho.
