@@ -1,3 +1,66 @@
 // Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#container {
+    margin: auto;
+    display: block; 
+    width: 100%; 
+    background: rgba(20, 80, 100, 0.35); 
+    padding: 14px 20px; 
+    -webkit-border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    border-radius: 4px; 
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  }
+
+  #icon_spacing {
+      padding-left: 10px;
+      padding-right: 20px;
+      background: gray;
+      border: black solid 3px;
+  }
+
+  .ui.button{
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    padding-right: 5px !important;
+    padding-left: 5px !important;
+    border: lightseagreen solid 1px;
+    width: 70px;
+  }
+
+  .center{
+      margin-right: 60% !important;
+  }
+
+  .comment_header_alignment{
+    margin: auto;
+    display: block; 
+    width: 40%; 
+    background: rgba(238, 238, 238, 0.822); 
+    padding: 14px 20px; 
+    -webkit-border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    border-radius: 4px; 
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    margin-top: 1%;
+    margin-left: 30%;
+  }
+  .category_post_content {
+    margin: auto;
+    display: block; 
+    width: 40%; 
+    background: rgba(8, 174, 216, 0.35); 
+    padding: 14px 20px; 
+    -webkit-border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    border-radius: 4px; 
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  }
