@@ -12,59 +12,73 @@
 
   <body>
   <div class="navigation">
-    <a class="home" href="<%= about_path%>">Home</a>
-    <a class="home" href ="<%= users_path%>">Users</a>
-    <a class="home" href ="<%= posts_path%>">Post</a>
-    <a class="home" href ="<%= categories_path%>">Category</a>
-    <a class="login" href ="<%= login_path %>">Log in</a>
-</div>
-    <div class="header wrap_it_up">
-    <div class="top-bar">
-    <div class="logo"><p><%= link_to "Askit", about_path %></p></div>
-      
-      <% if session[:user_id] %>
-        <h4>Logged in as: <%= current_user.username %></h4>
+        <div class="ui animated fade button biggerButton" tabindex="0">
+        <div class="visible content logo">Askit</div>
+          <div class="hidden content">
+            <span><%= link_to "About", about_path %>
+          </div>
+        </div>
+    <div class="ui animated fade button biggerButton home" tabindex="0">
+        <div class="visible content">Users</div>
+          <div class="hidden content">
+            <span><%= link_to "Users Index", users_path%>
+          </div>
+        </div>
+    <div class="ui animated fade button biggerButton home" tabindex="0">
+        <div class="visible content">Categories</div>
+          <div class="hidden content">
+            <span><%= link_to "Your Page", categories_path %>
+          </div>
+        </div>
+    <% if session[:user_id] %>
+      <div class="ui animated fade button biggerButton home" tabindex="0">
+        <div class="visible content">Profile</div>
+          <div class="hidden content">
+            <span><%= link_to "Your Page", user_path(current_user) %>
+          </div>
+        </div>
+      <div class="ui animated fade button biggerButton home" tabindex="0">
+        <div class="visible content">Logout :)</div>
+          <div class="hidden content">
+            <span><%= link_to "Logout", "/logout" %>
+          </div>
+        </div>
+      </div> <!--Navigation class ends here -->
+      <h4>Logged in as: <%= current_user.username %></h4>
         <% if current_user.admin == true %>
           <h5 class="red"><b>ADMIN</b></h5>
         <% end %>
-        <div class="ui animated fade button biggerButton" tabindex="0">
-          <div class="visible content">Profile</div>
-            <div class="hidden content">
-              <span><%= link_to "Your Page", user_path(current_user) %>
-            </div>
-          </div>
-        <div class="ui animated fade button biggerButton" tabindex="0">
-          <div class="visible content">Logout :)</div>
-            <div class="hidden content">
-              <span><%= link_to "Logout", "/logout" %>
-            </div>
+    <br>
+    <% else %>
+      <div class="ui animated fade button biggerButton home" tabindex="0">
+        <div class="visible content"><i class="user plus icon"></i></div>
+          <div class="hidden content">
+            <span><%= link_to "Create Account", new_user_path %>
           </div>
         </div>
-      </div>
-        <br>
-      <% else %>
- <!-- Maybe make this kinda like a pop-up thing if user is not logged in make this go to bottom? 
- <i class="user plus icon"></i>
- -->
-        <h4>You are currently not logged in.
-          <br><%= link_to "Create an account", new_user_path %> or <%= link_to "Login", login_path %>
-          <br>To get the most out of this app.
-        </h4>
-        <div class="ui animated fade button biggerButton" tabindex="0">
-          <div class="visible content"><i class="user plus icon"></i></div>
-            <div class="hidden content">
-              <span><%= link_to "Create Account", new_user_path %>
-            </div>
-          </div>
-        <div class="ui animated fade button biggerButton" tabindex="0">
-          <div class="visible content">Login</div>
-            <div class="hidden content">
-              <span><%= link_to "Sign In", login_path %>
-            </div>
+      <div class="ui animated fade button biggerButton home" tabindex="0">
+        <div class="visible content">Login</div>
+          <div class="hidden content">
+            <span><%= link_to "Sign In", login_path %>
           </div>
         </div>
-      <br>
-      <% end %>
+      </div> <!-- Navigation class ends here for else statement -->
+      <h4>You are currently not logged in.
+        <br><%= link_to "Create an account", new_user_path %> or <%= link_to "Login", login_path %>
+        <br>To get the most out of this app.
+      </h4>
+      <% end %>   
+  </div>
+
+
+
+
+
+    <div class="header wrap_it_up">
+    <div class="top-bar">
+    
+    </div>
+    <br>
     </div>
     <%= yield %>
   </body>
