@@ -8,7 +8,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    #byebug
   end
 
   def new
@@ -55,7 +54,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    
+
   end
 
   #not using this for now... save this tho.
