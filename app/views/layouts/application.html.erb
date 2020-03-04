@@ -27,7 +27,7 @@
     <div class="ui animated fade button biggerButton home" tabindex="0">
         <div class="visible content">Categories</div>
           <div class="hidden content">
-            <span><%= link_to "Your Page", categories_path %>
+            <span><%= link_to "Category Index", categories_path %>
           </div>
         </div>
     <% if session[:user_id] %>
@@ -38,7 +38,7 @@
           </div>
         </div>
       <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content">Logout :)</div>
+        <div class="visible content">Logout</div>
           <div class="hidden content">
             <span><%= link_to "Logout", "/logout" %>
           </div>

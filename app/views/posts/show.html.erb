@@ -14,7 +14,7 @@
 <h4>Comments</h4>
 <% @post.comments.each do |comment| %>
     <% if comment.parent_id == nil %> <!-- If this comment is parent... prevents replies displaying themselves as parent comment -->
-        <li><%=comment.user.username %>: <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
+        <div id="container"><li><%=comment.user.username %>: <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
             <i class="reply icon">Reply</i>
         <% end %>
         <% if session[:user_id] == comment.user_id %>
@@ -25,7 +25,7 @@
         <br>
         <%=comment.content%>
         
-        </li>
+        </li></div>
         <% if comment.replies %>
             <ul>
             <% comment.replies.each do |reply| %>
