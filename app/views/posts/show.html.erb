@@ -3,8 +3,11 @@
 <h2><%=@post.title%></h2>
 
 <h3>Posted By: <%= @post.user.username %></h3>
-    <% if session[:user_id] == @post.user_id %>
+    <% if session[:user_id] == @post.user_id || current_user.admin%>
         <%= link_to "Edit", edit_post_path(@post) %>
+        <%= form_tag(post_path(@post), method: :delete) do %>
+            <%= submit_tag "Delete" %>
+        <% end %>
     <% end %>
 <br>
 <p><%=@post.content%></p>
@@ -17,9 +20,12 @@
         <li><%=comment.user.username %>: <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
             <i class="reply icon">Reply</i>
         <% end %>
-        <% if session[:user_id] == comment.user_id %>
+        <% if session[:user_id] == comment.user_id || current_user.admin %>
             <%= link_to edit_comment_path(comment) do %>
                 <i class="edit icon">Edit</i>
+            <% end %>
+            <%= form_tag(comment_path(comment), method: :delete) do %>
+                <%= submit_tag "Delete" %>
             <% end %>
         <% end %>
         <br>
@@ -32,10 +38,13 @@
                 <li>---<%=reply.user.username%>:
                 <br>
                 <%=reply.content%>
-                <% if session[:user_id] == reply.user_id %>
+                <% if session[:user_id] == reply.user_id || current_user.admin%>
                 <%= link_to edit_comment_path(reply) do %>
                     <i class="edit icon">Edit</i>
                     <% end %>
+                <%= form_tag(comment_path(comment), method: :delete) do %>
+                    <%= submit_tag "Delete" %>
+                <% end %>
                  <% end %>
                 </li>
                 <br>

@@ -24,12 +24,14 @@
             <span><%= link_to "Users Index", users_path%>
           </div>
         </div>
+
     <div class="ui animated fade button biggerButton home" tabindex="0">
         <div class="visible content">Categories</div>
           <div class="hidden content">
             <span><%= link_to "Your Page", categories_path %>
           </div>
         </div>
+
     <% if session[:user_id] %>
       <div class="ui animated fade button biggerButton home" tabindex="0">
         <div class="visible content">Profile</div>
