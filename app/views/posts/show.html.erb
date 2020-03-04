@@ -17,12 +17,12 @@
 <h4>Comments</h4>
 <% @post.comments.each do |comment| %>
     <% if comment.parent_id == nil %> <!-- If this comment is parent... prevents replies displaying themselves as parent comment -->
-        <li><%=comment.user.username %>: <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
-            <i class="reply icon">Reply</i>
+        <div id="container"><li><%=comment.user.username %>: <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
+            <button class="ui button"><i class="reply icon center">Reply</i></button>
         <% end %>
         <% if session[:user_id] == comment.user_id || current_user.admin %>
             <%= link_to edit_comment_path(comment) do %>
-                <i class="edit icon">Edit</i>
+                <button class="ui button"><i class="edit icon center">Edit</i></button>
             <% end %>
             <%= form_tag(comment_path(comment), method: :delete) do %>
                 <%= submit_tag "Delete" %>
@@ -30,8 +30,7 @@
         <% end %>
         <br>
         <%=comment.content%>
-        
-        </li>
+        </li></div>
         <% if comment.replies %>
             <ul>
             <% comment.replies.each do |reply| %>
