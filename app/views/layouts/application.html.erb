@@ -16,30 +16,32 @@
       <span><%= link_to "Askit", about_path %>
     </div>
     <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content">Users</div>
+        <div class="visible content"><p class="users_wrap_it_up">Users</p></div>
           <div class="hidden content">
             <span><%= link_to "Users Index", users_path%>
           </div>
         </div>
 
     <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content">Categories</div>
+        <div class="visible content"><p class="categories_wrap_it_up">Categories</p></div>
           <div class="hidden content">
-            <span><%= link_to "Category Index", categories_path %>
+            <%= link_to categories_path do %>
+              <p class="categories_hover">Categories</p>
+            <% end %>
           </div>
         </div>
 
     <% if session[:user_id] %>
       <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content">Profile</div>
+        <div class="visible content"><p class="users_wrap_it_up">Profile</p></div>
           <div class="hidden content">
             <span><%= link_to "Your Page", user_path(current_user) %>
           </div>
         </div>
       <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content">Logout</div>
+        <div class="visible content"><p class="users_wrap_it_up">Logout</p></div>
           <div class="hidden content">
-            <span><%= link_to "Logout", "/logout" %>
+            <span><%= link_to "Exit", "/logout" %>
           </div>
         </div>
       <div class="home login_status">
