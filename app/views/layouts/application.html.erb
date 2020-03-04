@@ -12,12 +12,9 @@
 
   <body>
   <div class="navigation">
-        <div class="ui animated fade button biggerButton" tabindex="0">
-        <div class="visible content logo">Askit</div>
-          <div class="hidden content">
-            <span><%= link_to "About", about_path %>
-          </div>
-        </div>
+    <div class="logo">
+      <span><%= link_to "Askit", about_path %>
+    </div>
     <div class="ui animated fade button biggerButton home" tabindex="0">
         <div class="visible content">Users</div>
           <div class="hidden content">
@@ -45,11 +42,13 @@
             <span><%= link_to "Logout", "/logout" %>
           </div>
         </div>
-      </div> <!--Navigation class ends here -->
+      <div class="home login_status">
       <h4>Logged in as: <%= current_user.username %></h4>
         <% if current_user.admin == true %>
-          <h5 class="red"><b>ADMIN</b></h5>
+          <h5 class="red nav_logged_in"><b>ADMIN</b></h5>
         <% end %>
+      </div>
+      </div> <!--Navigation class ends here -->
     <br>
     <% else %>
       <div class="ui animated fade button biggerButton home" tabindex="0">

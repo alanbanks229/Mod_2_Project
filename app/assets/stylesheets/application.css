@@ -24,10 +24,14 @@
     overflow: hidden;
     background: rgba(6, 85, 92, 0.5);
     border: black solid 3px;
-    margin-top: 2px;
+    width: 100%;
+    top: 0%;
+    position: fixed;
   }
-  
+
   .navigation .logo {
+    margin-top: 20px;
+    margin-left: 15px;
     float: left;
     text-align: center;
     font-size: 50px;
@@ -42,6 +46,13 @@
     text-decoration: none;
     font-size: 16px;
   }
+
+  .navigation .home.login_status {
+    margin-right: 22%;
+    padding: 0px !important;
+    color: black !important;
+    text-align: center;
+  }
   .navigation a.login {
     float: right;
     color: #f2f2f2;
@@ -52,7 +63,6 @@
   }
   
   .navigation a:hover {
-    background-color: #ddd;
     color: black;
   }
   

@@ -41,7 +41,7 @@
                 <%= link_to edit_comment_path(reply) do %>
                     <button class="ui button"><i class="edit icon center">Edit</i></button>
                     <% end %>
-                <%= link_to comment_path(comment), method: :delete do %>
+                <%= link_to comment_path(reply), method: :delete do %>
                 <button class="ui button"><i class="trash icon center">Delete</i></button>
             <% end %>
                  <% end %>
