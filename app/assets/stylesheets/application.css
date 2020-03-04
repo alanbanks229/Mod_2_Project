@@ -16,20 +16,6 @@
  body {
     margin: 0;
   }
-  
-  #container { 
-    display: block; 
-    width: 30%; 
-    background: rgba(20, 80, 100, 0.35); 
-    padding: 14px 20px; 
-    -webkit-border-radius: 4px; 
-    -moz-border-radius: 4px; 
-    border-radius: 4px; 
-    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-  }
-
   .orange{
     color:  #daa410;
   }
