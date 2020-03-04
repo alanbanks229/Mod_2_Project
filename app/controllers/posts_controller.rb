@@ -52,6 +52,12 @@ class PostsController < ApplicationController
     redirect_to post_path(@post)
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    
+  end
+
   #not using this for now... save this tho.
   def post_params
     params.require(:post).permit(:category_id, :user_id, :content, :title)

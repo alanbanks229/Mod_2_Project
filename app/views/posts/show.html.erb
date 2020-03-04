@@ -24,8 +24,8 @@
             <%= link_to edit_comment_path(comment) do %>
                 <button class="ui button"><i class="edit icon center">Edit</i></button>
             <% end %>
-            <%= form_tag(comment_path(comment), method: :delete) do %>
-                <%= submit_tag "Delete" %>
+            <%= link_to comment_path(comment), method: :delete do %>
+                <button class="ui button"><i class="trash icon center">Delete</i></button>
             <% end %>
         <% end %>
         <br>
@@ -39,11 +39,11 @@
                 <%=reply.content%>
                 <% if session[:user_id] == reply.user_id || current_user.admin%>
                 <%= link_to edit_comment_path(reply) do %>
-                    <i class="edit icon">Edit</i>
+                    <button class="ui button"><i class="edit icon center">Edit</i></button>
                     <% end %>
-                <%= form_tag(comment_path(comment), method: :delete) do %>
-                    <%= submit_tag "Delete" %>
-                <% end %>
+                <%= link_to comment_path(comment), method: :delete do %>
+                <button class="ui button"><i class="trash icon center">Delete</i></button>
+            <% end %>
                  <% end %>
                 </li>
                 <br>
