@@ -22,7 +22,7 @@
 
   .navigation {
     overflow: hidden;
-    background: rgba(6, 85, 92, 0.5);
+    background: rgba(6, 85, 92, 0.8);
     border: black solid 3px;
     width: 100%;
     top: 0%;
@@ -47,8 +47,8 @@
   }
 
   .navigation .home.login_status {
-    margin-right: 22%;
-    padding: 0px !important;
+    margin-right: 17%;
+    padding-top: 5px !important;
     color: black !important;
     text-align: center;
   }

@@ -1,22 +1,22 @@
-<h1>Category: <%= @post.category.name %></h1>
-<br>
-<h2>Title: <%=@post.title%></h2>
+<div class="category_post_content">
+    <h1>Category: <%= @post.category.name %></h1>
+    <br>
+    <h2><%=@post.title%></h2>
 
-<h3>Posted By: <%= @post.user.username %></h3>
-    <% if session[:user_id] == @post.user_id || current_user.admin%>
-        <%= link_to edit_post_path(@post) do %>
-            <button class="ui button"><i class="edit icon center">Edit</i></button>
+    <h3>Posted By: <%= @post.user.username %></h3>
+        <% if session[:user_id] == @post.user_id || current_user.admin%>
+            <%= link_to edit_post_path(@post) do %>
+                <button class="ui button"><i class="edit icon center">Edit</i></button>
+            <% end %>
+            <%= link_to post_path(@post), method: :delete do %>
+                <button class="ui button"><i class="trash icon center">Delete</i></button>
+            <% end %>
         <% end %>
-        <%= link_to post_path(@post), method: :delete do %>
-            <button class="ui button"><i class="trash icon center">Delete</i></button>
-        <% end %>
-    <% end %>
-<br>
-<p>Question: <%=@post.content%></p>
-<p><%= link_to "Respond to Post", new_comment_path(post: @post.id) %>
-
-
-<h4>Comments</h4>
+    <br>
+    <p><%=@post.content%></p>
+    <p><%= link_to "Comment", new_comment_path(post: @post.id) %>
+</div>
+<div class="comment_header_alignment"><h4>Comments</h4>
 <% @post.comments.each do |comment| %>
     <% if comment.parent_id == nil %> <!-- If this comment is parent... prevents replies displaying themselves as parent comment -->
         <div id="container"><li><%=comment.user.username %>: <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
@@ -55,6 +55,7 @@
         <br>
     <% end %>
 <% end %>
+</div>
 <br>
 <br>
 <br>
