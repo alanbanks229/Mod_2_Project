@@ -4,38 +4,38 @@
 
 #container {
     margin: auto;
+    margin-top: 10%;
     display: block; 
-    width: 100%; 
-    background: rgba(20, 80, 100, 0.35); 
+    width: 16%; 
+    background: rgba(40, 158, 197, 0.521); 
     padding: 14px 20px; 
     -webkit-border-radius: 4px; 
     -moz-border-radius: 4px; 
-    border-radius: 4px; 
+    border-radius: 4px;
+    border: black solid 2px;
     -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
     -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
     box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
   }
 
-  #icon_spacing {
-      padding-left: 10px;
-      padding-right: 20px;
-      background: gray;
-      border: black solid 3px;
-  }
+p:hover{
+    color: blue;
+}
 
-  .ui.button{
-    padding-top: 3px !important;
-    padding-bottom: 3px !important;
-    padding-right: 5px !important;
-    padding-left: 5px !important;
-    border: lightseagreen solid 1px;
-    width: 70px;
+  .push_down{
+      margin-top: 5px;
   }
-
   .center{
-      margin-right: 60% !important;
+      padding-left: 33%;
   }
 
+  .black {
+      color: black;
+  }
+  .center_homepage{
+      padding-left:17%;
+      width: 100%;
+  }
   .comment_header_alignment{
     margin: auto;
     display: block; 
