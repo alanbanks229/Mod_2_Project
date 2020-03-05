@@ -5,7 +5,7 @@
 
     <h3>Posted By: <%= @post.user.username %></h3>
     <% if current_user != nil %> <!-- Need this here because it will break if Logged in as visitor... doesn't know what nil.admin is -->
-        <% if session[:user_id] == @post.user_id%>
+        <% if session[:user_id] == @post.user_id %>
             <%= link_to edit_post_path(@post) do %>
                 <button class="ui button"><i class="edit icon">Edit</i></button>
             <% end %>
@@ -19,12 +19,16 @@
     <br>
     <p><%=@post.content%></p>
     <p><%= link_to "Comment to Post", new_comment_path(post: @post.id) %>
-</div>
+
+</div> <!--End of Category_post_content div class -->
+
+
 <div class="comment_header_alignment"><h4>Comments</h4>
 <% @post.comments.each do |comment| %>
     <% if comment.parent_id == nil %> <!-- If this comment is parent... prevents replies displaying themselves as parent comment -->
         <div id="container">
-        <li><b><%=comment.user.username %>:</b> <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
+        <li><b><%=comment.user.username %>:</b> 
+        <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
             <button class="ui button"><i class="reply icon">Reply</i></button>
         <% end %>
         <% if current_user != nil %>
@@ -44,28 +48,30 @@
         </li>
         </div>
         <% if comment.replies %>
+        <div class="reply_list_div">
             <ul>
             <% comment.replies.each do |reply| %>
                 <li class="li_width_100"><b><%=reply.user.username%>:</b>
-                <br>
-                <%=reply.content%>
                 <% if current_user != nil %>
                     <% if session[:user_id] == reply.user_id%>
                         <%= link_to edit_comment_path(reply) do %>
                         <button class="ui button"><i class="edit icon">Edit</i></button>
                         <% end %>
                     <% end %>
-                <% if session[:user_id] == reply.user_id || current_user.admin %>
-                <%= link_to comment_path(reply), method: :delete do %>
-                    <button class="ui button"><i class="trash icon">Delete</i></button>
-                    <% end %>
-                    <% end %>
-                 <% end%>
+                    <% if session[:user_id] == reply.user_id || current_user.admin %>
+                        <%= link_to comment_path(reply), method: :delete do %>
+                        <button class="ui button"><i class="trash icon">Delete</i></button>
+                        <% end %>
+                    <%end%>
+                 <%end%>
+                 <br>
+                 <%=reply.content%>
                 </li>
                 <br>
             <%end%>
             </ul>
-        <% end %>
+        </div>
+        <% end %> <!-- End of if comment.replies>
         <br>
     <% end %>
 <% end %> <!--End of Post.comments.each do iteration -->
