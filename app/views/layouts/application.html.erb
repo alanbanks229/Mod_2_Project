@@ -9,7 +9,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
   </head>
-
+ 
   <body>
   <div class="navigation">
     <div class="logo">
@@ -17,28 +17,19 @@
     </div>
     <div class="ui animated fade button biggerButton home" tabindex="0">
         <div class="visible content"><p class="nav_bar_text_align">Users</p></div>
-          <div class="hidden content dropdown">
+          <div class="hidden content">
             <span><%= link_to "Users Index", users_path%>
           </div>
         </div>
     <div class="ui animated fade button biggerButton home" tabindex="0">
         <div class="visible content"><p class="categories_wrap_it_up">Categ</p></div>
           <div class="hidden content">
-
-            <div class="dropdown">
-              <button class="dropbtn">Categories</button>
-                <div class="dropdown-content">
-                  <% categories.each do |instance| %>
-                    <%= link_to "#{instance.name}", category_path(instance)%>
-                  <% end %>
-                </div>
-            </div>
-
-
-            
+            <%= link_to categories_path do %>
+              <p class="categories_hover">Categories</p>
+            <% end %>
           </div>
         </div>
-
+ 
     <% if session[:user_id] %>
       <div class="ui animated fade button biggerButton home" tabindex="0">
         <div class="visible content"><p class="nav_bar_text_align2">Profile</p></div>
@@ -82,11 +73,11 @@
       </div> <!-- Navigation class ends here for else statement -->
       <% end %>   
   </div>
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
     <div class="header wrap_it_up">
     <div class="top-bar">
     
