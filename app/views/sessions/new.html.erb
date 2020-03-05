@@ -12,26 +12,27 @@
   <br>
   <br>
   <%= form_tag login_path do %>
-  <div class="center">
-    <i class="user icon"></i>
+    <div>
+    <i class="user icon center"></i>
     <%= text_field_tag :username, nil, placeholder: 'Username' %>
-    <br>
-    <br>
-  </div>
-  <div class="center">
-    <i class="key icon"></i>
-    <%= password_field_tag :password, nil, placeholder: 'Password' %>
-    <br>
-    <br>
-    <br>
     </div>
+    <br>
+    <br>
+    <div>
+    <i class="key icon center"></i>
+    <%= password_field_tag :password, nil, placeholder: 'Password' %>
+    </div>
+    <br>
+    <br>
+    <br>
+
     <div class="login_sign_in_center"><%= submit_tag "Sign In" %></div>
   <% end %>
 
   <br>
   <br>
 
-  <div class="center_homepage">
+  <div class="login_sign_in_center">
   <%= link_to about_path do %>
    <p class="black">Return to Homepage</p>
    <% end %>
