@@ -7,41 +7,41 @@
     <% if current_user != nil %> <!-- Need this here because it will break if Logged in as visitor... doesn't know what nil.admin is -->
         <% if session[:user_id] == @post.user_id%>
             <%= link_to edit_post_path(@post) do %>
-                <button class="ui button"><i class="edit icon center_icon">Edit</i></button>
+                <button class="ui button"><i class="edit icon">Edit</i></button>
             <% end %>
             <%= link_to post_path(@post), method: :delete do %>
-                <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
+                <button class="ui button"><i class="trash icon">Delete</i></button>
             <% end %>
         <% end %>
         <% if current_user.admin %>
         <%= link_to post_path(@post), method: :delete do %>
-            <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
+            <button class="ui button"><i class="trash icon">Delete</i></button>
         <% end %>
         <% end %>
     <% end %>
     <br>
     <p><%=@post.content%></p>
-    <p><%= link_to "Comment", new_comment_path(post: @post.id) %>
+    <p><%= link_to "Comment to Post", new_comment_path(post: @post.id) %>
 </div>
 <div class="comment_header_alignment"><h4>Comments</h4>
 <% @post.comments.each do |comment| %>
     <% if comment.parent_id == nil %> <!-- If this comment is parent... prevents replies displaying themselves as parent comment -->
         <div id="container">
-        <li><%=comment.user.username %>: <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
-            <button class="ui button"><i class="reply icon center_icon">Reply</i></button>
+        <li><b><%=comment.user.username %>:</b> <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
+            <button class="ui button"><i class="reply icon">Reply</i></button>
         <% end %>
         <% if current_user != nil %>
             <% if session[:user_id] == comment.user_id%>
                 <%= link_to edit_comment_path(comment) do %>
-                    <button class="ui button"><i class="edit icon center_icon">Edit</i></button>
+                    <button class="ui button"><i class="edit icon">Edit</i></button>
                 <% end %>
                 <%= link_to comment_path(comment), method: :delete do %>
-                    <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
+                    <button class="ui button"><i class="trash icon">Delete</i></button>
                 <% end %>
             <% end %>
             <% if current_user.admin %>
             <%= link_to comment_path(comment), method: :delete do %>
-                <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
+                <button class="ui button"><i class="trash icon">Delete</i></button>
             <% end %>
         <% end %>
         <% end %>
@@ -52,21 +52,21 @@
         <% if comment.replies %>
             <ul>
             <% comment.replies.each do |reply| %>
-                <li class="li_width_100">---<%=reply.user.username%>:
+                <li class="li_width_100"> r/ <b><%=reply.user.username%>:</b>
                 <br>
                 <%=reply.content%>
                 <% if current_user != nil %>
                     <% if session[:user_id] == reply.user_id%>
                         <%= link_to edit_comment_path(reply) do %>
-                        <button class="ui button"><i class="edit icon center_icon">Edit</i></button>
+                        <button class="ui button"><i class="edit icon">Edit</i></button>
                         <% end %>
                         <%= link_to comment_path(reply), method: :delete do %>
-                        <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
+                        <button class="ui button"><i class="trash icon">Delete</i></button>
                         <% end %>
                     <% end %>
                 <% if current_user.admin %>
                 <%= link_to comment_path(reply), method: :delete do %>
-                    <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
+                    <button class="ui button"><i class="trash icon">Delete</i></button>
                     <% end %>
                     <% end %>
                  <% end%>
