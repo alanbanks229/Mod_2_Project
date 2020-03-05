@@ -5,13 +5,18 @@
 
     <h3>Posted By: <%= @post.user.username %></h3>
     <% if current_user != nil %> <!-- Need this here because it will break if Logged in as visitor... doesn't know what nil.admin is -->
-        <% if session[:user_id] == @post.user_id || current_user.admin%>
+        <% if session[:user_id] == @post.user_id%>
             <%= link_to edit_post_path(@post) do %>
                 <button class="ui button"><i class="edit icon center_icon">Edit</i></button>
             <% end %>
             <%= link_to post_path(@post), method: :delete do %>
                 <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
             <% end %>
+        <% end %>
+        <% if current_user.admin %>
+        <%= link_to post_path(@post), method: :delete do %>
+            <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
+        <% end %>
         <% end %>
     <% end %>
     <br>
@@ -26,7 +31,7 @@
             <button class="ui button"><i class="reply icon center_icon">Reply</i></button>
         <% end %>
         <% if current_user != nil %>
-            <% if session[:user_id] == comment.user_id || current_user.admin %>
+            <% if session[:user_id] == comment.user_id%>
                 <%= link_to edit_comment_path(comment) do %>
                     <button class="ui button"><i class="edit icon center_icon">Edit</i></button>
                 <% end %>
@@ -34,6 +39,11 @@
                     <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
                 <% end %>
             <% end %>
+            <% if current_user.admin %>
+            <%= link_to comment_path(comment), method: :delete do %>
+                <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
+            <% end %>
+        <% end %>
         <% end %>
         <br>
         <%=comment.content%>
@@ -46,13 +56,18 @@
                 <br>
                 <%=reply.content%>
                 <% if current_user != nil %>
-                    <% if session[:user_id] == reply.user_id || current_user.admin%>
+                    <% if session[:user_id] == reply.user_id%>
                         <%= link_to edit_comment_path(reply) do %>
                         <button class="ui button"><i class="edit icon center_icon">Edit</i></button>
                         <% end %>
-                    <%= link_to comment_path(reply), method: :delete do %>
+                        <%= link_to comment_path(reply), method: :delete do %>
                         <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
                         <% end %>
+                    <% end %>
+                <% if current_user.admin %>
+                <%= link_to comment_path(reply), method: :delete do %>
+                    <button class="ui button"><i class="trash icon center_icon">Delete</i></button>
+                    <% end %>
                     <% end %>
                  <% end%>
                 </li>
