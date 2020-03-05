@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
 
   before_action :authorized, only: [:new, :create, :edit, :update]
-  before_action :admin, only: [:destroy]
+  before_action :current_user, only: [:destroy]
+  
   def show
     @comment = Comment.find(params[:id])
   end
