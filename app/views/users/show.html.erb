@@ -5,6 +5,9 @@ the usage of the if else conditionals checking if a user is logged in-->
 <%else %>
 	<h1><%=@user.username%> Homepage</h1>
 <% end %>
+<% if session[:user_id] == @user.id%>
+<%= link_to "Edit Profile", edit_user_path(@user)%>
+<% end %>
 <h3>Email: <%= @user.email %></h3>
 <br>
 <%= link_to "Create a New Post", new_post_path %>
