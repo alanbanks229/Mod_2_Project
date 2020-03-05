@@ -1,3 +1,66 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#new_user_container {
+    margin: auto;
+    margin-top: 10%;
+    display: block; 
+    width: 25%; 
+    background: rgba(40, 158, 197, 0.521); 
+    padding: 14px 20px; 
+    -webkit-border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    border-radius: 4px;
+    border: black solid 2px;
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  }
+
+  .center_full_name{
+    margin-bottom: 3%;
+    padding-left: 30%;
+  }
+  .center_username{
+    margin-bottom: 3%;
+    padding-left: 30%;
+  }
+  .center_email{
+    margin-bottom: 3%;
+    padding-left: 37%;
+  }
+  .center_password{
+    margin-bottom: 3%;
+    padding-left: 30%;
+  }
+  .center_password_confirmation{
+    margin-bottom: 3%;
+    padding-left: 7%;
+  }
+  .center_submit{
+    margin-bottom: 3%;
+    padding-left: 40%;
+  }
+#center_form_in_container{
+    margin: auto;
+    padding: 14px 20px; 
+    -webkit-border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    border-radius: 4px;
+}
+  .center_h1{
+    padding-left: 30%;
+  }
+
+  .center{
+    padding-left: 15%;
+}
+
+b{
+    padding-right: 1%;
+}
+
+a:hover{
+    color: red;
+}
