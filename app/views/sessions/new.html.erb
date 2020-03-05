@@ -1,6 +1,6 @@
 <div id="login_container">
 
-  <h1 class="center">Login</h1>
+  <h1 class="login_sign_in_center">Login</h1>
 
   <!--<%= flash[:notice] %> Works too-->
 
@@ -12,17 +12,20 @@
   <br>
   <br>
   <%= form_tag login_path do %>
-  <div>
+  <div class="center">
     <i class="user icon"></i>
     <%= text_field_tag :username, nil, placeholder: 'Username' %>
     <br>
     <br>
   </div>
+  <div class="center">
     <i class="key icon"></i>
     <%= password_field_tag :password, nil, placeholder: 'Password' %>
     <br>
     <br>
-    <div class="center"><%= submit_tag "Sign In" %></div>
+    <br>
+    </div>
+    <div class="login_sign_in_center"><%= submit_tag "Sign In" %></div>
   <% end %>
 
   <br>
