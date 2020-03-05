@@ -39,11 +39,12 @@
                     <button class="ui button"><i class="trash icon">Delete</i></button>
                 <% end %>
             <% end %>
-            <% if current_user.admin %>
+            <% if session[:user_id] == comment.user_id || current_user.admin %>
             <%= link_to comment_path(comment), method: :delete do %>
                 <button class="ui button"><i class="trash icon">Delete</i></button>
             <% end %>
-        <% end %>
+            <% end %>
+           
         <% end %>
         <br>
         <%=comment.content%>
@@ -52,7 +53,7 @@
         <% if comment.replies %>
             <ul>
             <% comment.replies.each do |reply| %>
-                <li class="li_width_100"> r/ <b><%=reply.user.username%>:</b>
+                <li class="li_width_100"><b><%=reply.user.username%>:</b>
                 <br>
                 <%=reply.content%>
                 <% if current_user != nil %>
@@ -60,11 +61,8 @@
                         <%= link_to edit_comment_path(reply) do %>
                         <button class="ui button"><i class="edit icon">Edit</i></button>
                         <% end %>
-                        <%= link_to comment_path(reply), method: :delete do %>
-                        <button class="ui button"><i class="trash icon">Delete</i></button>
-                        <% end %>
                     <% end %>
-                <% if current_user.admin %>
+                <% if session[:user_id] == reply.user_id || current_user.admin %>
                 <%= link_to comment_path(reply), method: :delete do %>
                     <button class="ui button"><i class="trash icon">Delete</i></button>
                     <% end %>
