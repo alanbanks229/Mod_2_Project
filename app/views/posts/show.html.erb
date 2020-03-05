@@ -35,15 +35,12 @@
                 <%= link_to edit_comment_path(comment) do %>
                     <button class="ui button"><i class="edit icon">Edit</i></button>
                 <% end %>
-                <%= link_to comment_path(comment), method: :delete do %>
-                    <button class="ui button"><i class="trash icon">Delete</i></button>
-                <% end %>
             <% end %>
-            <% if current_user.admin %>
+            <% if session[:user_id] == comment.user_id || current_user.admin %>
             <%= link_to comment_path(comment), method: :delete do %>
                 <button class="ui button"><i class="trash icon">Delete</i></button>
+                <% end %>
             <% end %>
-        <% end %>
         <% end %>
         <br>
         <%=comment.content%>
@@ -60,16 +57,13 @@
                         <%= link_to edit_comment_path(reply) do %>
                         <button class="ui button"><i class="edit icon">Edit</i></button>
                         <% end %>
-                        <%= link_to comment_path(reply), method: :delete do %>
-                            <button class="ui button"><i class="trash icon">Delete</i></button>
-                        <% end %>
-                    <%end%><!--End of session[:user_id] == reply.user_id -->
-                    <% if current_user.admin %>
-                        <%= link_to comment_path(reply), method: :delete do %>
-                        <button class="ui button"><i class="trash icon">Delete</i></button>
-                        <% end %>
                     <% end %>
-                <% end%>
+                <% if session[:user_id] == reply.user_id || current_user.admin %>
+                <%= link_to comment_path(reply), method: :delete do %>
+                    <button class="ui button"><i class="trash icon">Delete</i></button>
+                    <% end %>
+                    <% end %>
+                 <% end%>
                 </li>
                 <br>
             <%end%>
