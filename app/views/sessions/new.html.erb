@@ -11,6 +11,7 @@
   <% end %>
   <br>
   <br>
+  <div class="login_credents"> <!-- Begin login credents -->
   <%= form_tag login_path do %>
     <div>
     <i class="user icon center"></i>
@@ -28,13 +29,13 @@
 
     <div class="login_sign_in_center"><%= submit_tag "Sign In" %></div>
   <% end %>
-
+</div> <!--End of Login Credents -->
   <br>
   <br>
 
   <div class="login_sign_in_center">
   <%= link_to about_path do %>
-   <p class="black">Return to Homepage</p>
+   <p class="black">Homepage</p>
    <% end %>
   </div>
 

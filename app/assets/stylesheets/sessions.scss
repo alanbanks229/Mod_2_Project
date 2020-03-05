@@ -5,7 +5,8 @@
 #login_container {
     margin: auto;
     margin-top: 10%;
-    display: block; 
+    display: block;
+    height: auto;
     width: 13%; 
     background: rgba(40, 158, 197, 0.521); 
     padding: 14px 20px; 
@@ -16,6 +17,18 @@
     -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
     -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
     box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  }
+
+ /* -webkit-box-shadow: 1px 1px 1px rgba(12, 7, 7, 0.3);
+  -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.651);
+  */
+  .login_credents{
+
+    background-color: rgba(0, 192, 80, 0.08);
+    border:  rgba(255, 255, 255, 0.534) 1px solid;
+    padding-bottom: 10%;
+    padding-top: 10%;
   }
 
 p.black:hover{
@@ -31,7 +44,6 @@ p.black:hover{
   }
   .black {
       color: black;
-      padding: 50% !important;
       margin: auto;
   }
   .center_submit{

@@ -47,7 +47,7 @@
   }
 
   .navigation .home.login_status {
-    margin-right: 17%;
+    margin-right: 22%;
     padding-top: 5px !important;
     color: black !important;
     text-align: center;
@@ -106,15 +106,20 @@
 
  .users_wrap_it_up {
      text-align: center !important;
-     margin-top: 27% !important;
-     margin-left: 25% !important;
+     margin-top: 8% !important;
+     font-size: 30px !important;
+     margin-left: 3% !important;
  }
- .wrap_it_up {
-     text-align: center;
+
+ .icon_alignment_nav_bar{
+   margin-top: 27% !important;
+   margin-left: 28% !important;
+   font-size: 45px !important;
  }
 
  .categories_wrap_it_up {
-   margin-top: 27% !important;
+   margin-top: 10% !important;
+   font-size: 30px !important;
  }
  .categories_hover{
    margin-bottom: 10px !important;
