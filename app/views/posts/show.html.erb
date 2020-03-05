@@ -9,11 +9,8 @@
             <%= link_to edit_post_path(@post) do %>
                 <button class="ui button"><i class="edit icon">Edit</i></button>
             <% end %>
-            <%= link_to post_path(@post), method: :delete do %>
-                <button class="ui button"><i class="trash icon">Delete</i></button>
-            <% end %>
         <% end %>
-        <% if current_user.admin %>
+        <% if session[:user_id] == @post.user_id || current_user.admin %>
         <%= link_to post_path(@post), method: :delete do %>
             <button class="ui button"><i class="trash icon">Delete</i></button>
         <% end %>
