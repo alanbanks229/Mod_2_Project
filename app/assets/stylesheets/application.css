@@ -104,17 +104,30 @@
      width: 90px !important;
  }
 
- .users_wrap_it_up {
+ .nav_bar_text_align {
      text-align: center !important;
      margin-top: 8% !important;
      font-size: 30px !important;
      margin-left: 3% !important;
  }
 
+ .nav_bar_text_align2 {
+  text-align: center !important;
+  margin-top: 14% !important;
+  font-size: 26px !important;
+  margin-left: 3% !important;
+}
+
+.nav_bar_logout_profile {
+  text-align: center !important;
+  margin-top: 8% !important;
+  font-size: 30px !important;
+  margin-left: 3% !important;
+}
  .icon_alignment_nav_bar{
    margin-top: 27% !important;
    margin-left: 28% !important;
-   font-size: 45px !important;
+   font-size: 40px !important;
  }
 
  .categories_wrap_it_up {
