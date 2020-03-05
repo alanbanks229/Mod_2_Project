@@ -33,4 +33,5 @@ class ApplicationController < ActionController::Base
         flash[:login_warning] = "You must be logged in to use that function"
         redirect_to login_path unless logged_in?
     end
+
 end
