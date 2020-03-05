@@ -1,18 +1,19 @@
 <!-- There is probably a better way to do the below, in regards to 
 the usage of the if else conditionals checking if a user is logged in-->
-<%if session[:user_id] %>
+<%if session[:user_id] == @user.id%>
 	<h1>Your Homepage</h1>
 <%else %>
 	<h1><%=@user.username%> Homepage</h1>
 <% end %>
 <% if session[:user_id] == @user.id%>
 <%= link_to "Edit Profile", edit_user_path(@user)%>
+<br>
+<br>
+<%= link_to "Create a New Post", new_post_path %>
 <% end %>
 <h3>Email: <%= @user.email %></h3>
 <br>
-<%= link_to "Create a New Post", new_post_path %>
-<br>
-<%if session[:user_id] %>
+<%if session[:user_id] == @user.id %>
 	<h1>Your Post(s)</h1>
 <%else %>
 	<h3><%=@user.username%> Post(s)</h3>
@@ -22,6 +23,7 @@ the usage of the if else conditionals checking if a user is logged in-->
 	<li>Category: <%= link_to p.category.name, category_path(p.category) %>
 		<br>
 		<p>Title: <%= link_to p.title, post_path(p) %></p>
+		<br>
 	</li>
 <% end %>
 </ul>
