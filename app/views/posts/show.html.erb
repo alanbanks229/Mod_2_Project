@@ -29,7 +29,7 @@
 <div class="comment_header_alignment"><h4>Comments</h4>
 <% @post.comments.each do |comment| %>
     <% if comment.parent_id == nil %> <!-- If this comment is parent... prevents replies displaying themselves as parent comment -->
-        <div id="container">
+        <div id="parent_comment_container">
         <li><b><%=comment.user.username %>:</b> 
         <%= link_to new_comment_path(parent_id: comment.id, post: @post.id) do %>
             <button class="ui button"><i class="reply icon">Reply</i></button>
