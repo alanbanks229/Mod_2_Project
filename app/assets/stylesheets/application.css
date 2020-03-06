@@ -169,11 +169,11 @@ body {
 @keyframes transitionIn {
   from {
     opacity: 0;
-    transform: rotateX(-10deg);
+    transform: rotateX(-45deg);
   }
 
   to {
-    opacity: 1;
+    opacity: 1.25;
     transform: rotateX(0deg);
   }
 }
