@@ -14,151 +14,147 @@
  *= require_self
  */
  body {
-    margin: 0;
-  }
+  margin: 0;
 
-  .orange{
-    color:  #daa410;
-  }
-
-  .navigation {
-    background: rgba(6, 85, 92, 0.8);
-    border: thick double rgba(224, 224, 224, 0.746);
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 80%;
-    position: fixed;
-    margin: 0 auto;
-  }
-  .navigation .logo {
-    margin-top: 25px;
-    margin-left: 15px;
-    float: left;
-    text-align: center;
-    font-size: 50px;
-    font-family: 'Dancing Script', cursive;
-    text-shadow: 0 0 10px white;
+}
+.orange{
+  color:  #daa410;
 }
 
-  .navigation .home {
-    float: right;
-    color: #daa410;
-    text-align: center;
-    font-size: 16px;
-  }
+.navigation {
+  background: rgba(6, 85, 92, 0.8);
+  border: thick double rgba(224, 224, 224, 0.746);
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 80%;
+  position: fixed;
+  margin: 0 auto;
+}
+.navigation .logo {
+  margin-top: 25px;
+  margin-left: 15px;
+  float: left;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Dancing Script', cursive;
+  text-shadow: 0 0 10px white;
+}
 
-  .navigation .home.login_status {
-    margin-right: 15%;
-    padding-top: 5px !important;
-    color: black !important;
-    text-align: center;
-  }
-  .navigation a.login {
-    float: right;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  .navigation a:hover {
-    color: black;
-  }
-  
+.navigation .home {
+  float: right;
+  color: #daa410;
+  text-align: center;
+  font-size: 16px;
+}
 
- .div_about{
-    width:50%;
-    border: 3px solid whitesmoke;
-    padding: 10px;
-    margin: auto;
-    background-color: rgba(173, 216, 220, 0.3);
- }
+.navigation .home.login_status {
+  margin-right: 15%;
+  padding-top: 5px !important;
+  color: black !important;
+  text-align: center;
+}
+.navigation a.login {
+  float: right;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navigation a:hover {
+  color: black;
+}
+
+
+.div_about{
+  width:50%;
+  border: 3px solid whitesmoke;
+  padding: 10px;
+  margin: auto;
+  background-color: rgba(173, 216, 220, 0.3);
+}
 
 .top-bar{
-    padding: 30px;
-    width:100%;
-    overflow:hidden;
-    top: 0%;
+  padding: 30px;
+  width:100%;
+  overflow:hidden;
+  top: 0%;
 }
 .center_content{
-    padding-top: 10%;
+  padding-top: 10%;
 }
 .top-right-nav-bar{
-    padding:8px 16px;
-    float:right;
-    width:auto;
-    border:none;
-    display:block;
-    outline:0    
+  padding:8px 16px;
+  float:right;
+  width:auto;
+  border:none;
+  display:block;
+  outline:0    
 }
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2.5rem;            /* Footer height */
-  }
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
 
-  .biggerButton {
-     margin: 5px !important;
-     height: 60px;
-     width: 90px !important;
- }
+.biggerButton {
+   margin: 5px !important;
+   height: 60px;
+   width: 90px !important;
+}
 
- .nav_bar_text_align {
-     text-align: center !important;
-     margin-top: 8% !important;
-     font-size: 30px !important;
-     margin-left: 3% !important;
- }
+.nav_bar_text_align {
+   text-align: center !important;
+   margin-top: 8% !important;
+   font-size: 30px !important;
+   margin-left: 3% !important;
+}
 
- .nav_bar_text_align2 {
-  text-align: center !important;
-  margin-top: 14% !important;
-  font-size: 26px !important;
-  margin-left: 3% !important;
+.nav_bar_text_align2 {
+text-align: center !important;
+margin-top: 14% !important;
+font-size: 26px !important;
+margin-left: 3% !important;
 }
 
 .nav_bar_logout_profile {
-  text-align: center !important;
-  margin-top: 8% !important;
-  font-size: 30px !important;
-  margin-left: 3% !important;
+text-align: center !important;
+margin-top: 8% !important;
+font-size: 30px !important;
+margin-left: 3% !important;
 }
- .icon_alignment_nav_bar{
-   margin-top: 27% !important;
-   margin-left: 28% !important;
-   font-size: 40px !important;
- }
+.icon_alignment_nav_bar{
+ margin-top: 27% !important;
+ margin-left: 28% !important;
+ font-size: 40px !important;
+}
 
- .categories_wrap_it_up {
-   margin-top: 10% !important;
-   font-size: 30px !important;
- }
- .categories_hover{
-   margin-bottom: 10px !important;
-   
- }
+.categories_wrap_it_up {
+ margin-top: 10% !important;
+ font-size: 30px !important;
+}
+.categories_hover{
+ margin-bottom: 10px !important;
+ 
+}
+.new_font {
+  font-family: 'Dancing Script', cursive;
+  font-size: 20px;
+  
+}
 
- .wrap_it_up {
-     text-align: center;
- }
- .new_font {
-    font-family: 'Dancing Script', cursive;
-    font-size: 20px;
-    
- }
-
- body {
-    background-image: url('https://phandroid.com/wp-content/uploads/2014/06/kite.jpg');
-    background-repeat: no-repeat; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
+body {
+  background-image: url('https://phandroid.com/wp-content/uploads/2014/06/kite.jpg');
+  background-repeat: no-repeat; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
 .red {
-    color: red;
+  color: red;
 }

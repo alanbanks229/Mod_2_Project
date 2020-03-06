@@ -7,7 +7,8 @@
     margin-top: 10%;
     display: block; 
     width: 37%; 
-    background: rgba(40, 158, 197, 0.521); 
+    background: rgba(40, 158, 197, 0.521);
+
     padding: 14px 20px; 
     -webkit-border-radius: 4px; 
     -moz-border-radius: 4px; 
@@ -18,6 +19,36 @@
     box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
   }
 
+  .user_home_overall{
+    padding: 3%;
+    margin: auto;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.253);
+    border-radius: 4px;
+    border:  rgba(255, 255, 255, 0.65);
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  }
+
+  #user_posts{
+    margin: auto;
+    margin-top: 8%;
+    display: block; 
+    width: 60%; 
+    /*background: rgba(40, 158, 197, 0.521);*/
+    background: rgb(34,193,195);
+    background: linear-gradient(315deg, rgba(34,193,195,1) 0%, rgba(253,187,45,0.5718662464985995) 100%);    
+
+    padding: 14px 20px; 
+    -webkit-border-radius: 4px; 
+    -moz-border-radius: 4px; 
+    border-radius: 4px;
+    border: black solid 2px;
+    -webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    -moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  }
   .center_full_name{
     margin-bottom: 3%;
     padding-left: 30%;
@@ -38,8 +69,13 @@
     margin-bottom: 3%;
     padding-left: 10%;
   }
+
   .center_submit{
     margin-bottom: 3%;
+    padding-left: 40%;
+  }
+
+  .center_user_edit_link{
     padding-left: 40%;
   }
 #center_form_in_container{
@@ -49,10 +85,32 @@
     -moz-border-radius: 4px; 
     border-radius: 4px;
 }
-  .center_h1{
+  .center_h1_new{
     padding-left: 30%;
   }
 
+  .center_h1_user_homepage{
+    font-size: 56px;
+    text-align: center;
+  }
+
+  .make_smaller_h4_padding{
+    max-height: 200px;
+  }
+  .center_name_h4{
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .center_email_h4{
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .center_user_links{
+    margin: 2%;
+    text-align: center;
+  }
   .center{
     padding-left: 15%;
 }

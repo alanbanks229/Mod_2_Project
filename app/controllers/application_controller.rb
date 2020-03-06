@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 
     helper_method :current_user
     helper_method :current_post
+    helper_method :categories
 
     def current_user
         # memoization
@@ -34,4 +35,11 @@ class ApplicationController < ActionController::Base
         redirect_to login_path unless logged_in?
     end
 
+    def categories 
+        arr = []
+        Category.all.each do |category|
+            arr << category
+        end
+        return arr
+    end
 end
