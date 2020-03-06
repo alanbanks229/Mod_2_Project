@@ -15,8 +15,8 @@
  */
  body {
     margin: 0;
-
   }
+
   .orange{
     color:  #daa410;
   }
@@ -139,6 +139,10 @@
  .categories_hover{
    margin-bottom: 10px !important;
    
+ }
+
+ .wrap_it_up {
+     text-align: center;
  }
  .new_font {
     font-family: 'Dancing Script', cursive;
