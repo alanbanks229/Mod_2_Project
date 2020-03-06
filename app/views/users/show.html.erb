@@ -1,24 +1,40 @@
 <!-- There is probably a better way to do the below, in regards to 
 the usage of the if else conditionals checking if a user is logged in-->
+
+<div class="user_home_overall">
+<h1 class="center_h1_user_homepage">
 <%if session[:user_id] == @user.id%>
-	<h1>Your Homepage</h1>
+	Your Homepage
 <%else %>
-	<h1><%=@user.username%> Homepage</h1>
+	<%=@user.username%> Homepage
 <% end %>
+</h1>
+
+<div class="make_smaller_h4_padding">
+<h4 class="center_name_h4">Name: <%= @user.full_name %></h4>
+<h4 class="center_email_h4">Email: <%= @user.email %></h4>
+</div>
+
+<div class="center_user_links">
 <% if session[:user_id] == @user.id%>
 <%= link_to "Edit Profile", edit_user_path(@user)%>
 <br>
 <br>
 <%= link_to "Create a New Post", new_post_path %>
 <% end %>
-<h3>Email: <%= @user.email %></h3>
-<br>
+</div>
+
+<div id="user_posts">
 <%if session[:user_id] == @user.id %>
 	<h1>Your Post(s)</h1>
 <%else %>
 	<h3><%=@user.username%> Post(s)</h3>
 <% end %>
 <ul>
+<% if @user.posts.count == 0 %>
+	<h2>Looks like you haven't posted anything yet :(</h2>
+	<br><p><%= link_to "Create a New Post!", new_post_path %></p>
+<% else %>
 <% @user.posts.each do |p| %>
 	<li>Category: <%= link_to p.category.name, category_path(p.category) %>
 		<br>
@@ -26,7 +42,9 @@ the usage of the if else conditionals checking if a user is logged in-->
 		<br>
 	</li>
 <% end %>
+<% end %>
 </ul>
 <br>
 <br>
-<%= link_to "Users Index", users_path %>
+</div>
+</div>
