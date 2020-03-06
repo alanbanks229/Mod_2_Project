@@ -1,3 +1,4 @@
+<div class="category_post_new">
 <%if @category_id && @category_name %> <!-- If user clicked New Post from a specific Category Page -->
 	<h1>New Post For <%= @category_name%></h1>
 <% else %>
@@ -33,3 +34,4 @@
 	<br>
 	<%= p.submit %>
 <% end %>
+</div>
