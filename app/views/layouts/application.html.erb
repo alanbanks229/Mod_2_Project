@@ -9,82 +9,86 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
   </head>
- 
   <body>
-  <div class="navigation">
-    <div class="logo">
-      <span><%= link_to "Askit", about_path %>
-    </div>
-    <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content"><p class="nav_bar_text_align">Users</p></div>
-          <div class="hidden content">
-            <span><%= link_to "Users Index", users_path%>
-          </div>
-        </div>
-    <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content"><p class="categories_wrap_it_up">Categ</p></div>
-          <div class="hidden content">
-            <%= link_to categories_path do %>
-              <p class="categories_hover">Categories</p>
-            <% end %>
-          </div>
-        </div>
- 
-    <% if session[:user_id] %>
+    <div class="navigation">
+      <div class="logo">
+        <span><%= link_to "Askit", about_path %>
+      </div>
       <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content"><p class="nav_bar_text_align2">Profile</p></div>
-          <div class="hidden content">
-            <span><%= link_to "Your Page", user_path(current_user) %>
-          </div>
+        <div class="visible content">
+          <p class="nav_bar_text_align">Users</p>
         </div>
+        <div class="hidden content">
+          <span><%= link_to "Users Index", users_path%>
+        </div>
+      </div>
       <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content"><p class="nav_bar_text_align2">Logout</p></div>
-          <div class="hidden content">
-            <span><%= link_to "Exit", "/logout" %>
-          </div>
+        <div class="visible content">
+          <p class="categories_wrap_it_up">Categ</p>
         </div>
+        <div class="hidden content">
+          <%= link_to categories_path do %>
+          <p class="categories_hover">Categories</p>
+          <% end %>
+        </div>
+      </div>
+      <% if session[:user_id] %>
+      <div class="ui animated fade button biggerButton home" tabindex="0">
+        <div class="visible content">
+          <p class="nav_bar_text_align2">Profile</p>
+        </div>
+        <div class="hidden content">
+          <span><%= link_to "Your Page", user_path(current_user) %>
+        </div>
+      </div>
+      <div class="ui animated fade button biggerButton home" tabindex="0">
+        <div class="visible content">
+          <p class="nav_bar_text_align2">Logout</p>
+        </div>
+        <div class="hidden content">
+          <span><%= link_to "Exit", "/logout" %>
+        </div>
+      </div>
       <div class="home login_status">
-      <h4>Logged in as: <%= current_user.username %></h4>
+        <h4>Logged in as: <%= current_user.username %></h4>
         <% if current_user.admin == true %>
           <h5 class="red nav_logged_in"><b>ADMIN</b></h5>
         <% end %>
       </div>
-      </div> <!--Navigation class ends here -->
-    <br>
-    <% else %>
+    </div> <!--Navigation class ends here for if statement -->
+
+    <% else %> <!--If the session[:user_id] is nil -->
+
       <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content"><i class="user plus icon icon_alignment_nav_bar"></i></div>
-          <div class="hidden content">
-            <span><%= link_to "Create Account", new_user_path %>
-          </div>
+        <div class="visible content"><i class="user plus icon icon_alignment_nav_bar"></i>
         </div>
-      <div class="ui animated fade button biggerButton home" tabindex="0">
-        <div class="visible content"><p class="nav_bar_text_align">Login</p></div>
-          <div class="hidden content">
-            <span><%= link_to "Sign In", login_path %>
-          </div>
+        <div class="hidden content">
+          <span><%= link_to "Create Account", new_user_path %>
         </div>
-      <div class="home login_status">
-      <h4>You are currently not logged in.
-        <br><%= link_to "Create an account", new_user_path %> or <%= link_to "Login", login_path %>
-        <br>To get the most out of this app.
-      </h4>
       </div>
-      </div> <!-- Navigation class ends here for else statement -->
-      <% end %>   
+      <div class="ui animated fade button biggerButton home" tabindex="0">
+        <div class="visible content">
+          <p class="nav_bar_text_align">Login</p>
+        </div>
+        <div class="hidden content">
+          <span><%= link_to "Sign In", login_path %>
+        </div>
+      </div>
+      <div class="home login_status">
+        <h4>You are currently not logged in.
+          <br>
+          <%= link_to "Create an account", new_user_path %> or <%= link_to "Login", login_path %>
+          <br>
+          To get the most out of this app.
+        </h4>
+      </div>
+    </div> <!-- Navigation class ends here for else statement -->
+    <% end %>
+  <div class="container_excluding_nav_bar"><!-- If i do this I need to add a </div> to the end of every html...-->
+  <br>
+  <br>
+  
+  <%= yield %>
   </div>
- 
- 
- 
- 
- 
-    <div class="header wrap_it_up">
-    <div class="top-bar">
-    
-    </div>
-    <br>
-    </div>
-    <%= yield %>
   </body>
 </html>
-
