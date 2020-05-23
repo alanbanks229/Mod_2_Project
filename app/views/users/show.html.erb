@@ -27,23 +27,38 @@ the usage of the if else conditionals checking if a user is logged in-->
 <div id="user_posts">
 <%if session[:user_id] == @user.id %>
 	<h1>Your Post(s)</h1>
+	<% if @user.posts.count == 0 %>
+		<h2>Looks like you haven't posted anything yet :(</h2>
+		<br><p><%= link_to "Create a New Post!", new_post_path %></p>
+	<% else %>
+	<ul>
+	<% @user.posts.each do |p| %>
+		<li>Category: <%= link_to p.category.name, category_path(p.category) %>
+			<br>
+			<p>Title: <%= link_to p.title, post_path(p) %></p>
+			<br>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
 <%else %>
 	<h3><%=@user.username%> Post(s)</h3>
+	<% if @user.posts.count == 0 %>
+		<h2>It looks like this user hasn't posted anything yet</h2>
+	<% else %>
+	<ul>
+	<% @user.posts.each do |p| %>
+		<li>Category: <%= link_to p.category.name, category_path(p.category) %>
+			<br>
+			<p>Title: <%= link_to p.title, post_path(p) %></p>
+			<br>
+		</li>
+		<% end %>
+	</ul>
+	<% end %>
 <% end %>
-<ul>
-<% if @user.posts.count == 0 %>
-	<h2>Looks like you haven't posted anything yet :(</h2>
-	<br><p><%= link_to "Create a New Post!", new_post_path %></p>
-<% else %>
-<% @user.posts.each do |p| %>
-	<li>Category: <%= link_to p.category.name, category_path(p.category) %>
-		<br>
-		<p>Title: <%= link_to p.title, post_path(p) %></p>
-		<br>
-	</li>
-<% end %>
-<% end %>
-</ul>
+
+
 <br>
 <br>
 </div>

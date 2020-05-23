@@ -1,18 +1,34 @@
-<h1><%=@category.name%></h1>
-<h3><%=@category.description%></h3>
-<br>
-<p><%= link_to "New Post", new_post_path(category_name: @category.name, category_id: @category.id) %></p>
-<br>
-<br>
-<h3>Posts</h3>
-<br>
-<% @category.posts.each do |post| %>
-    <li>Posted by: <%= post.user.username %>
+<div class="category_show_page">
+    <div class="category_desc">
+        <br/>
+        <h1><%=@category.name%></h1>
+        <h3><%=@category.description%></h3>
+        <br>
+        <p><%= link_to "Create New Post", new_post_path(category_name: @category.name, category_id: @category.id) %></p>
+        <br>
+        <br>
+    </div>
+    <hr/>
+    <h3 class="post_show_heading">Posts</h3>
     <br>
-    <em><%= link_to post.title, post_path(post) %></em>
-    </li>
+    <div class="div_holding_all_posts">
+        <% @category.posts.each do |post| %>
+                <div class="post_card">
+                    <h3 class="categ_show_post_title">
+                        <%= link_to post.title, post_path(post) %>
+                    </h3>
+                    <hr class="make_horizontal_line_smaller"/>
+                    <em class="posted_by_spacing">
+                        Posted by: 
+                        <b>
+                        <%= post.user.username %>
+                        </b>
+                    </em>
+                    <br>
+                </div>
+        <% end %>
+    </div>
     <br>
-<% end %>
-<br>
-<br>
-<%= link_to "Categories Homepage", categories_path %>
+    <br>
+    <%= link_to "Categories Homepage", categories_path %>
+</div>

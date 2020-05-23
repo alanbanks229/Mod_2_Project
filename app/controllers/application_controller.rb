@@ -42,4 +42,5 @@ class ApplicationController < ActionController::Base
         end
         return arr
     end
+
 end
